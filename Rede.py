@@ -1,3 +1,5 @@
+import numpy as np
+from sklearn.metrics import r2_score
 class NeuralNetwork():
 
     def __init__(self, layers: list):
@@ -12,7 +14,7 @@ class NeuralNetwork():
         result[x >= 0] = 1
         return result
     
-    def __linear(sefl, x):
+    def __linear(self, x):
         return x
     
     def __linear_derivate(self, x):

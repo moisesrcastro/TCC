@@ -1,3 +1,8 @@
+import numpy as np
+from Rede import NeuralNetwork
+from Camadas import Input, Hidden, Output
+import plotly.graph_objects as go
+
 composicao = [[0.0252, 0.0581, 0.0754, 0.1028, 0.1257, 0.1564, 0.1776, 0.2062, 0.2231, 0.2487, 0.2761, 0.3084, 0.3248, 0.3509, 0.3753, 0.4025, 0.4274],
               [0.0252, 0.0581, 0.0754, 0.1028, 0.1257, 0.1564, 0.1776, 0.2062, 0.2231, 0.2487, 0.2761, 0.3084, 0.3248, 0.3509, 0.3753, 0.4025, 0.4274],
               [0.0252, 0.0581, 0.0754, 0.1028, 0.1257, 0.1564, 0.1776, 0.2062, 0.2231, 0.2487, 0.2761, 0.3084, 0.3248, 0.3509, 0.3753, 0.4025, 0.4274],
@@ -22,33 +27,33 @@ precisao = []
 
 for j in range(len(composicao)):
      X = np.array([composicao[j], temperatura[j],
-            [197.97 for i in range(17)],
-            [2.36 for i in range(17)],
-            [596.21 for i in range(17)],
-            [0.8087 for i in range(17)],
-            [540.77 for i in range(17)],
-            [449.52 for i in range(17)],
-            [5.983 for i in range(17)],
-            [5.983 for i in range(17)],
-            [24.263 for i in range(17)],
-            [1.932 for i in range(17)],
-            [179.321 for i in range(17)],
-            [0 for i in range(17)],
-            [0 for i in range(17)],
-            [162.874 for i in range(17)],
-            [70.129 for i in range(17)],
-            [107.14 for i in range(17)],
-            [0.908 for i in range(17)],
-            [0.449 for i in range(17)],
-            [6 for i in range(17)],
-            [0.673 for i in range(17)],
-            [0 for i in range(17)],
-            [0 for i in range(17)],
-            [-0.71 for i in range(17)],
-            [8.81 for i in range(17)]])
+            [197.97 for i in range(len(temperatura[j]))],
+            [2.36 for i in range(len(temperatura[j]))],
+            [596.21 for i in range(len(temperatura[j]))],
+            [0.8087 for i in range(len(temperatura[j]))],
+            [540.77 for i in range(len(temperatura[j]))],
+            [449.52 for i in range(len(temperatura[j]))],
+            [5.983 for i in range(len(temperatura[j]))],
+            [5.983 for i in range(len(temperatura[j]))],
+            [24.263 for i in range(len(temperatura[j]))],
+            [1.932 for i in range(len(temperatura[j]))],
+            [179.321 for i in range(len(temperatura[j]))],
+            [0 for i in range(len(temperatura[j]))],
+            [0 for i in range(len(temperatura[j]))],
+            [162.874 for i in range(len(temperatura[j]))],
+            [70.129 for i in range(len(temperatura[j]))],
+            [107.14 for i in range(len(temperatura[j]))],
+            [0.908 for i in range(len(temperatura[j]))],
+            [0.449 for i in range(len(temperatura[j]))],
+            [6 for i in range(len(temperatura[j]))],
+            [0.673 for i in range(len(temperatura[j]))],
+            [0 for i in range(len(temperatura[j]))],
+            [0 for i in range(len(temperatura[j]))],
+            [-0.71 for i in range(len(temperatura[j]))],
+            [8.81 for i in range(len(temperatura[j]))]])
 
      Y = np.array([pressao[j],
-          [1 for i in range(17)]])
+          [1 for i in range(len(pressao[j]))]])
 
      Y_f = (Y - np.min(Y))/ (np.max(Y) - np.min(Y))
 
